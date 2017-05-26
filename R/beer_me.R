@@ -1,6 +1,6 @@
 #' @export
 beer_me <- function(number = 1){
-  beers <- beer_table()
+  data("beers")
   beers <- beers[sample(nrow(beers), number), ]
   return(beers)
 }

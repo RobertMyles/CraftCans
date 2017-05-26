@@ -6,8 +6,23 @@
 \usage{
 \code{beer_table()}
 }
+\value{
+A dataframe, with the following columns:
+\itemize{
+\item{\code{ID: }}{\code{integer}, database entry number for the beer.}
+\item{\code{Beer: }}{\code{character}, names of the beer, many of them wonderful.}
+\item{\code{Style: }}{\code{character}, beer type.}
+\item{\code{Ounces: }}{\code{numeric}, liquid ounces, volume of the can.}
+\item{\code{Litres: }}{\code{numeric}, for the sane among us.}
+\item{\code{ABV_percent: }}{\code{numeric}, Alcohol By Volume.}
+\item{\code{IBUs: }}{\code{numeric}, International Bitterness Units. Gauges the isomerized alpha acids from hops in a beer in parts per million.}
+\item{\code{Brewery: }}{\code{character}, name of the brewery.}
+\item{\code{City: }}{\code{character}, city of the brewery.}
+\item{\code{State: }}{\code{character}, state where the brewery is.}
+}
+}
 \description{
-Returns a dataframe of information on canned beer from CraftCans.com.
+Returns a dataframe of information on canned beer from \code{CraftCans.com}.
 }
 \seealso{
 \href{http://www.craftcans.com/about.php}{Craft Cans}
