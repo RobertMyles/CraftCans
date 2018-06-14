@@ -1,12 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-CraftCans
-=========
 
-`CraftCans` is a tiny R package to get and play with the data from [Craft Cans](http://www.craftcans.com/). It contains, among other things, the quite wonderful `beer_me()` function, which will 'serve' you a random beer from Craft Cans lovely stock. Sláinte!
+# CraftCans
 
-Installation
-------------
+`CraftCans` is a tiny R package to get and play with the data from
+[Craft Cans](http://www.craftcans.com/). It contains, among other
+things, the quite wonderful `beer_me()` function, which will ‘serve’ you
+a random beer from Craft Cans lovely stock. Sláinte\!
+
+## Installation
 
 ``` r
 
@@ -15,40 +17,55 @@ devtools::install_github("RobertMyles/CraftCans")
 library(CraftCans)
 ```
 
-Usage
------
+## Usage
 
-You can get a complete list of all the canned beers Craft Cans have with `beer_table()`. Since this function downloads and parses data, a faster alternative is `data("beers")`, which returns a dataframe of these canned beers, taken from Craft Cans at the end of May 2017. `beer_table()` will return up-to-date information, however.
+You can get a complete list of all the canned beers Craft Cans have with
+`beer_table()`. Since this function downloads and parses data, a faster
+alternative is `data("beers")`, which returns a dataframe of these
+canned beers, taken from Craft Cans at the end of May 2017.
+`beer_table()` will return up-to-date information, however.
 
 ``` r
-data("beers") %>% head()
-#> [1] "beers"
+data("beers")
+beers
+#> # A tibble: 2,410 x 10
+#>    ID    Beer   Brewery  City  State Style Ounces ABV_percent  IBUs Litres
+#>  * <chr> <chr>  <chr>    <chr> <chr> <chr>  <dbl>       <dbl> <dbl>  <dbl>
+#>  1 2692  Get T~ NorthGa~ Minn~ " MN" Amer~     16         4.5    50  0.473
+#>  2 2691  Maggi~ NorthGa~ Minn~ " MN" Milk~     16         4.9    26  0.473
+#>  3 2690  Wall'~ NorthGa~ Minn~ " MN" Engl~     16         4.8    19  0.473
+#>  4 2689  Pumpi~ NorthGa~ Minn~ " MN" Pump~     16         6      38  0.473
+#>  5 2688  Stron~ NorthGa~ Minn~ " MN" Amer~     16         6      25  0.473
+#>  6 2687  Parap~ NorthGa~ Minn~ " MN" Extr~     16         5.6    47  0.473
+#>  7 2686  Citra~ Against~ Loui~ " KY" Amer~     16         8      68  0.473
+#>  8 2685  Londo~ Against~ Loui~ " KY" Engl~     16        12.5    80  0.473
+#>  9 2684  35 K   Against~ Loui~ " KY" Milk~     16         7.7    25  0.473
+#> 10 2683  A Beer Against~ Loui~ " KY" Amer~     16         4.2    42  0.473
+#> # ... with 2,400 more rows
 ```
 
-Beer me!
---------
+## Beer me\!
 
 ``` r
 beer_me()
 #> # A tibble: 1 x 10
-#>      ID                    Beer              Brewery    City State  Style
-#>   <chr>                   <chr>                <chr>   <chr> <chr>  <chr>
-#> 1  1452 Laimas Kölsch Style Ale Fate Brewing Company Boulder    CO Kölsch
-#> # ... with 4 more variables: Ounces <dbl>, ABV_percent <dbl>, IBUs <dbl>,
-#> #   Litres <dbl>
+#>   ID    Beer   Brewery   City  State Style Ounces ABV_percent  IBUs Litres
+#>   <chr> <chr>  <chr>     <chr> <chr> <chr>  <dbl>       <dbl> <dbl>  <dbl>
+#> 1 1429  Pau H~ Maui Bre~ Laha~ " HI" Czec~     12         5.5    NA  0.355
 ```
 
 ``` r
 beer_me(number = 4)
 #> # A tibble: 4 x 10
-#>      ID                   Beer                       Brewery      City
-#>   <chr>                  <chr>                         <chr>     <chr>
-#> 1  2105              Even Keel Ballast Point Brewing Company San Diego
-#> 2   741 Dale's Pale Ale (2002)           Oskar Blues Brewery     Lyons
-#> 3  1502            BrightCider            2 Towns Ciderhouse Corvallis
-#> 4   992      oSKAr the G'Rauch           Oskar Blues Brewery  Longmont
-#> # ... with 6 more variables: State <chr>, Style <chr>, Ounces <dbl>,
-#> #   ABV_percent <dbl>, IBUs <dbl>, Litres <dbl>
+#>   ID    Beer   Brewery  City   State Style Ounces ABV_percent  IBUs Litres
+#>   <chr> <chr>  <chr>    <chr>  <chr> <chr>  <dbl>       <dbl> <dbl>  <dbl>
+#> 1 381   Upsta~ Upstate~ Elmira " NY" Amer~     12         6.5    70  0.355
+#> 2 1353  Alpha~ Hop Val~ Sprin~ " OR" Amer~     12         6.5    90  0.355
+#> 3 2486  Baby ~ Speakas~ San F~ " CA" Amer~     12         4.7    35  0.355
+#> 4 1522  Agave~ Brecken~ Denver " CO" Amer~     12         4.2     9  0.355
 ```
 
-I'm working on plotting the cans as images (from [this](http://www.craftcans.com/db.php?cat=cans) page), so that may or may not be done soon. Withering criticisms/lovely suggestions always welcome.
+I’m working on plotting the cans as images (from
+[this](http://www.craftcans.com/db.php?cat=cans) page), so that may or
+may not be done soon. Withering criticisms/lovely suggestions always
+welcome.

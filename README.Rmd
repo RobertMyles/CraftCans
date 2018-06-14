@@ -33,7 +33,8 @@ library(CraftCans)
 You can get a complete list of all the canned beers Craft Cans have with `beer_table()`. Since this function downloads and parses data, a faster alternative is `data("beers")`, which returns a dataframe of these canned beers, taken from Craft Cans at the end of May 2017. `beer_table()` will return up-to-date information, however.  
 
 ```{r}
-data("beers") %>% head()
+data("beers")
+beers
 ```
 
 
