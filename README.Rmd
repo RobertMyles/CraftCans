@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 
 `CraftCans` is a tiny R package to get and play with the data from [Craft Cans](http://www.craftcans.com/). It contains, among other things, the quite wonderful `beer_me()` function, which will 'serve' you a random beer from Craft Cans lovely stock. Sláinte!  
 
+**edit:** Looks like the API is out. Pity. `beers` and `beer_me()` still work, though.  
+
 ## Installation  
 
 
